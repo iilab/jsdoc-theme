@@ -12,12 +12,17 @@
     "url": "https://github.com/LOKE/jsdoc-theme.git"
   },
   "author": "Den Williams",
-  "licenses": [{
-    "type": "Apache-2.0",
-    "url": "http://www.apache.org/licenses/LICENSE-2.0"
-  }],
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/LOKE/jsdoc-theme/issues"
   },
-  "homepage": "https://github.com/LOKE/jsdoc-theme"
+  "homepage": "https://github.com/LOKE/jsdoc-theme",
+  "dependencies": {
+    "taffydb": "^2.7.3"
+  }
 }
