@@ -413,7 +413,7 @@ function buildNav(members) {
     // get all functions with a route defined
     members.api = find({kind:'function'})
     .filter(function(fnDoclet) {
-      console.log(fnDoclet.route);
+      // console.log(fnDoclet.route);
       return fnDoclet.route;
     });
 
@@ -502,7 +502,7 @@ exports.publish = function(taffyData, opts, tutorials) {
     helper.setTutorials(tutorials);
 
     data = helper.prune(data);
-    data.sort('longname, version, since');
+    opts.sort && data.sort('longname, version, since');
     helper.addEventListeners(data);
 
     var sourceFiles = {};
