@@ -81,8 +81,8 @@
 
     if (doc.rpc) { ?>
       <div class="bs-callout bs-callout-rpc">
-        <h5>RPC: <?js= typeof doc.rpc === 'string' ? doc.rpc : doc.name ?></h5>
-        This class, or parts of this class are exposed via RPC
+        <h5>ACT: <?js= typeof doc.rpc === 'string' ? doc.rpc : doc.name ?></h5>
+        This class, or parts of this class are exposed via seneca actions.
       </div>
     <?js }
 
@@ -133,7 +133,7 @@
         var classes = self.find({kind: 'class', memberof: doc.longname});
         if (!isGlobalPage && classes && classes.length) {
     ?>
-        <h3 class="subsection-title">Classes</h3>
+        <h3 class="subsection-title">Plugins</h3>
 
         <dl><?js classes.forEach(function(c) { ?>
             <dt><?js= self.linkto(c.longname, c.name) ?></dt>
@@ -145,7 +145,7 @@
         var mixins = self.find({kind: 'mixin', memberof: doc.longname});
         if (!isGlobalPage && mixins && mixins.length) {
     ?>
-        <h3 class="subsection-title">Mixins</h3>
+        <h3 class="subsection-title">Utility</h3>
 
         <dl><?js mixins.forEach(function(m) { ?>
             <dt><?js= self.linkto(m.longname, m.name) ?></dt>
@@ -157,7 +157,7 @@
         var namespaces = self.find({kind: 'namespace', memberof: doc.longname});
         if (!isGlobalPage && namespaces && namespaces.length) {
     ?>
-        <h3 class="subsection-title">Namespaces</h3>
+        <h3 class="subsection-title">Services</h3>
 
         <dl><?js namespaces.forEach(function(n) { ?>
             <dt><?js= self.linkto(n.longname, n.name) ?></dt>

@@ -629,11 +629,12 @@ h2 span.ancestors a {
 }
 
 div#main {
-  font-size: 0.8em;
+  /*font-size: 0.8em;*/
 }
 
 div#main section {
   clear: both;
+  max-width: 900px;
 }
 
 h3.constructor, h3.subsection-title {

@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/LOKE/jsdoc-theme",
   "dependencies": {
+    "fluture": "^6.1.0",
     "taffydb": "^2.7.3"
   }
 }
