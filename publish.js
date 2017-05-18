@@ -330,7 +330,6 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
 
     items.forEach(function(item) {
       var isRpc = item.kind === 'rpc' || item.kind === 'rpccall';
-
       var longname = isRpc ? item.base : item.longname;
 
       var methodquery = { kind: 'function', memberof: item.longname };
@@ -412,7 +411,11 @@ function buildNav(members) {
   });
 
   // get all classes that are RPC services
+
+  // console.log('members.classes', members.classes);
+
   members.rpc = members.classes
+    .concat(members.namespaces)
     .filter(function(doclet) {
       return doclet.rpc;
     })
@@ -428,6 +431,9 @@ function buildNav(members) {
         scope: doclet.scope
       };
     });
+
+  // console.log('members.rpc', members.rpc);
+  // console.log('members.namespaces', members.namespaces);
 
   nav += buildMemberNav(members.tutorials, 'Tutorials', seenTutorials, linktoTutorial);
   nav += buildApiMemberNav(members.api, 'API', seenApi, linkto);
